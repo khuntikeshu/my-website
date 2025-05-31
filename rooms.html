@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Hotel Paradise - Rooms</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .main-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        .navbar {
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .room-header {
+            background: linear-gradient(135deg, #1e5799 0%,#2989d8 50%,#207cca 100%);
+            color: white;
+            padding: 30px 0; /* Increased padding for better prominence */
+            margin-bottom: 30px; /* Increased margin for spacing */
+        }
+        .room-title {
+            font-size: 2.5rem; /* Increased font size */
+            font-weight: bold;
+            text-align: center;
+            margin-top: 15px; /* Increased margin */
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2); /* Added text shadow */
+        }
+        .room-subtitle {
+            font-style: italic;
+            text-align: center;
+            color: #010f1cd5;
+            margin-bottom: 30px; /* Increased margin */
+            font-size: 1.1rem; /* Slightly larger subtitle */
+        }
+        .room-types-section {
+            padding: 30px 0;
+        }
+        .card {
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15); /* More pronounced shadow */
+            border-radius: 10px; /* More rounded corners */
+            margin-bottom: 30px; /* Increased margin */
+            transition: transform 0.3s ease-in-out;
+            border: none; /* Removed default border */
+        }
+        .card:hover {
+            transform: scale(1.03); /* Slightly more scaling on hover */
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2); /* Enhanced shadow on hover */
+        }
+        .card-img-top {
+            border-top-left-radius: 10px; /* Matching card border-radius */
+            border-top-right-radius: 10px; /* Matching card border-radius */
+            height: 280px; /* Slightly taller image area */
+            object-fit: cover;
+        }
+        .card-body {
+            padding: 25px; /* Increased padding */
+        }
+        .card-title {
+            font-size: 1.7rem; /* Increased font size */
+            font-weight: bold;
+            color: #2c3e50; /* Darker, more professional color */
+            margin-bottom: 15px; /* Increased margin */
+        }
+        .card-text {
+            font-size: 1.05rem; /* Slightly larger text */
+            color: #555; /* Slightly lighter text color */
+            line-height: 1.7; /* Improved line height for readability */
+        }
+        .rating {
+            color: #f39c12; /* More vibrant yellow */
+            font-size: 1.1rem; /* Slightly larger rating stars */
+        }
+        .amenities-list {
+            list-style: none;
+            padding-left: 0;
+            margin-top: 15px;
+        }
+        .amenities-list li {
+            margin-bottom: 8px;
+            color: #777;
+        }
+        .amenities-list i {
+            margin-right: 8px;
+            color: #3498db; /* Blue color for icons */
+        }
+        .btn-primary {
+            background-color: #3498db; /* More appealing blue */
+            border-color: #3498db;
+            transition: background-color 0.3s ease;
+        }
+        .btn-primary:hover {
+            background-color: #2980b9; /* Darker shade on hover */
+            border-color: #2980b9;
+        }
+        .footer {
+            box-shadow: 0 -4px 12px rgba(0,0,0,0.1); /* More prominent footer shadow */
+            padding-top: 40px; /* Increased padding */
+            padding-bottom: 30px; /* Increased padding */
+            margin-top: 40px; /* Increased margin */
+            background-color: #333; /* Slightly darker background */
+            margin-right: 160px;
+            margin-left: 160px;
+        }
+        .footer h5 {
+            color: #f1c40f; /* Brighter yellow for headings */
+            font-weight: bold;
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+        .footer p, .footer a {
+            color: #ddd; /* Lighter text color */
+            font-size: 0.95rem;
+        }
+        .footer a:hover {
+            color: #fff;
+        }
+        .social-icons a {
+            margin-right: 18px; /* Slightly more spacing */
+            font-size: 1.3rem; /* Slightly larger icons */
+            transition: color 0.3s ease;
+        }
+        .social-icons a:hover {
+            color: #fff; /* White on hover */
+        }
+        .nav-link {
+            font-weight: 500; /* Slightly bolder navigation text */
+        }
+        .nav-link:hover {
+            color: #ffdd57 !important; /* Brighter yellow on hover */
+        }
+        .modal-header {
+            background-color: #3498db;
+            color: white;
+            border-bottom: 1px solid #2980b9;
+        }
+        .modal-title {
+            font-weight: bold;
+        }
+        .modal-footer {
+            border-top: 1px solid #ddd;
+        }
+        .list-unstyled a{
+        text-decoration: none;
+        
+    }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <div class="room-header text-center">
+            <h1 class="room-title">Choose Your Perfect Retreat</h1>
+            <p class="room-subtitle">Discover our range of comfortable and stylish rooms</p>
+        </div>
+
+        <nav class="navbar navbar-expand-sm navbar-dark bg-dark mb-4">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="home.html">Hotel Paradise</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="home.html"><i class="fa fa-home"></i> Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html"><i class="fa-solid fa-address-card"></i> About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="booking.html"><i class="fa-solid fa-book"></i> Booking</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-warning" href="rooms.html"><i class="fa-solid fa-bed"></i> Rooms</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="menu.html"><i class="fa-solid fa-utensils"></i> Menu</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html"><i class="fa-solid fa-envelope"></i> Contact</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="feedback.html"><i class="fa-solid fa-comment-dots"></i> Feedback</a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <button type="button" class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#myModal">
+                                Login <i class="fa-solid fa-right-to-bracket"></i>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="room-types-section">
+            <div class="row">
+                <div class="col-lg-6 mb-4">
+                    <div class="card h-100">
+                        <img class="card-img-top" src="Screenshots/4.jpg" alt="Non-Premium Room">
+                        <div class="card-body">
+                            <h4 class="card-title">Standard Comfort Room</h4>
+                            <p class="card-text">
+                                Experience a comfortable stay with our well-appointed standard rooms, perfect for budget-conscious travelers.
+                                <br>
+                                <b class="rating">Rating :- </b>
+                                <i class="fa fa-star text-warning"></i>
+                                <i class="fa fa-star text-warning"></i>
+                                <i class="fa fa-star text-warning"></i>
+                                <i class="fa fa-star text-warning"></i>
+                                <i class="fa fa-star-half-o text-warning"></i> 4.4
+                            </p>
+                            <ul class="amenities-list">
+                                <li><i class="fa fa-fan"></i> Only Fan Available</li>
+                                <li><i class="fa fa-bed"></i> Comfortable Standard Bed</li>
+                                <li><i class="fa fa-tint"></i> 24 Hours Water Supply</li>
+                                <li><i class="fa fa-bath"></i> Attached Private Bathroom</li>
+                                <li><i class="fa fa-door-closed"></i> Single Wardrobe</li>
+                                <li><i class="fa fa-check-circle"></i> Ideal for short stays</li>
+                            </ul>
+                            <div class="d-grid">
+                                <a href="booking.html" class="btn btn-primary"><i class="fa-solid fa-book me-2"></i> Book Standard Room</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-4">
+                    <div class="card h-100">
+                        <img class="card-img-top" src="Screenshots/5.jpeg" alt="Premium Room">
+                        <div class="card-body">
+                            <h4 class="card-title">Deluxe Experience Room</h4>
+                            <p class="card-text">
+                                Indulge in luxury with our premium rooms featuring enhanced amenities and elegant decor for a memorable stay.
+                                <br>
+                                <b class="rating">Rating :- </b>
+                                <i class="fa fa-star text-warning"></i>
+                                <i class="fa fa-star text-warning"></i>
+                                <i class="fa fa-star text-warning"></i>
+                                <i class="fa fa-star text-warning"></i>
+                                <i class="fa fa-star-half-o text-warning"></i> 4.9
+                            </p>
+                            <ul class="amenities-list">
+                                <li><i class="fa fa-snowflake-o"></i> Air Conditioning & Ceiling Fan</li>
+                                <li><i class="fa fa-king"></i> Plush King-Size Bed</li>
+                                <li><i class="fa fa-eye"></i> Enhanced City View</li>
+                                <li><i class="fa fa-tint"></i> Round-the-Clock Water</li>
+                                <li><i class="fa fa-bath"></i> Luxurious Italian Marble Bathroom</li>
+                                <li><i class="fa fa-door-closed"></i> Two Spacious Wardrobes</li>
+                                <li><i class="fa fa-tv"></i> Smart Television with Streaming</li>
+                                <li><i class="fa fa-coffee"></i> Complimentary Welcome Kit</li>
+                            </ul>
+                            <div class="d-grid">
+                                <a href="booking.html" class="btn btn-primary"><i class="fa-solid fa-book me-2"></i> Book Deluxe Room</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer mt-5 bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase text-warning">Hotel Paradise Resort</h5>
+                    <p>Where luxury meets comfort. Experience unparalleled hospitality in the heart of the city.</p>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase text-warning">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="home.html" class="text-white"><i class="fas fa-chevron-right me-2"></i>Home</a></li>
+                        <li class="mb-2"><a href="about.html" class="text-white"><i class="fas fa-chevron-right me-2"></i>About Us</a></li>
+                        <li class="mb-2"><a href="booking.html" class="text-white"><i class="fas fa-chevron-right me-2"></i>Booking</a></li>
+                        <li class="mb-2"><a href="rooms.html" class="text-white"><i class="fas fa-chevron-right me-2"></i>Rooms & Suites</a></li>
+                        <li class="mb-2"><a href="menu.html" class="text-white"><i class="fas fa-chevron-right me-2"></i>Menu</a></li>
+                        <li class="mb-2"><a href="contact.html" class="text-white"><i class="fas fa-chevron-right me-2"></i>Contact</a></li>
+                        <li class="mb-2"><a href="feedback.html" class="text-white"><i class="fas fa-chevron-right me-2"></i>Feedback</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase text-warning">Contact Us</h5>
+                    <p><i class="fas fa-envelope me-2"></i> info@hotelparadise.com</p>
+                    <p><i class="fas fa-phone me-2"></i> +91 9876543210</p>
+                    <div class="social-icons mt-3">
+                        <a href="https://www.facebook.com/" class="text-warning"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/" class="text-warning"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.twitter.com/" class="text-warning"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.linkedin.com/" class="text-warning"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center py-3 bg-primary mt-3">
+            <small>&copy; 2025 Hotel Paradise. All rights reserved.</small>
+        </div>
+    </footer>
+
+    <div class="modal fade" id="myModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-primary text-white">
+                    <h4 class="modal-title">Member Login <i class="fa-solid fa-right-to-bracket"></i></h4>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="/action_page.php">
+                        <div class="mb-3 mt-3">
+                            <label for="email" class="form-label">Email :-</label>
+                            <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="pwd" class="form-label">Password :-</label>
+                            <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd" required>
+                        </div>
+                        <div class="form-check mb-3">
+                            <input class="form-check-input" type="checkbox" id="remember" name="remember">
+                            <label class="form-check-label" for="remember">Remember me</label>
+                        </div>
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-primary">Login</button>
+                        </div>
+                        
+            </div>
+        </div>
+    </div>
+</body>
+</html>

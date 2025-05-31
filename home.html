@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <title>Hotel Paradise</title>
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+ <style>
+    body { 
+        background-color: #f8f9fa;
+    }
+    .main-container { /*Hotel paradise title section css */
+        width: 1200px;
+        margin: 0 auto;
+        padding: 0 15px;
+    }
+    .navbar {
+        box-shadow: 4px rgba(0,0,0,0.1); 
+    }
+    .welcome-section {
+        background: linear-gradient(135deg, #1e5799 0%,#2989d8 50%,#207cca 100%);
+        color: white;
+        padding: 30px;
+        border-radius: 5px;
+        margin: 20px 0;
+        box-shadow: 8px rgba(0,0,0,0.1);
+    }
+    .update-marquee {
+        background-color: #ffc107;
+        color: #212529;
+        padding: 10px;
+        border-radius: 5px;
+        margin-bottom: 10px;
+    }
+    .carousel {
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+    .footer {
+        box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+        margin-right: 170px;
+        margin-left: 170px;
+    }
+    .social-icons a {
+        margin-right: 15px;
+    }
+    .guest-section {
+        background: linear-gradient(to right, #4b6cb7, #182848); /* Blue gradient */
+        border-left: 5px solid #1a2980; /* Dark blue border */
+        color: white;
+        padding: 25px;
+        border-radius: 8px;
+        box-shadow: 0 6px 10px rgba(0,0,0,0.1);
+        margin-bottom: 30px;
+    }
+    .guest-section h4 {
+        font-weight: 700;
+        margin-bottom: 20px;
+    }
+    .guest-section p {
+        font-size: 1.05rem;
+        line-height: 1.7;
+    }
+    .list-unstyled a{
+        text-decoration: none;
+        
+    }
+  </style>
+</head>
+<body>
+ <div class="main-container">
+    <!-- Header -->
+    <div class="welcome-section text-center">
+        <h1><b>Hotel Paradise</b></h1>
+        <i><p class="lead">Luxury Redefined</p></i>
+    </div>
+    
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark mb-4">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="home.html">Hotel Paradise</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link text-warning" href="home.html"><i class="fa fa-home"></i> Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html"><i class="fa-solid fa-address-card"></i> About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="booking.html"><i class="fa-solid fa-book"></i> Booking</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="rooms.html"><i class="fa-solid fa-bed"></i> Rooms</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="menu.html"><i class="fa-solid fa-utensils"></i> Menu</a>
+                    </li> 
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html"><i class="fa-solid fa-envelope"></i> Contact</a>
+                    </li> 
+                    <li class="nav-item">
+                        <a class="nav-link" href="feedback.html"><i class="fa-solid fa-comment-dots"></i> Feedback</a>
+                    </li> 
+                </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <button type="button" class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#myModal">
+                            Login <i class="fa-solid fa-right-to-bracket"></i>
+                        </button>
+                    </li> 
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Update Marquee -->
+    <div class="update-marquee">
+        <div class="row align-items-center">
+            <div class="col-md-2">
+                <span class="badge bg-danger">NEW</span> <strong>Special Offer:- </strong>
+            </div>
+            <div class="col-md-10">
+                <marquee direction="left">
+                    Grand Opening Special! 50% OFF on all bookings for July 20th! Limited rooms available. Book now to secure your luxury stay at Hotel Paradise!
+                </marquee>
+            </div>
+        </div>
+    </div>
+
+    <!-- Welcome Message -->
+    <div class="guest-section">
+        <h4 class="text-white">Dear Guest,</h4>
+        <p>
+            Welcome to Paradise Hotel! We are thrilled to have you here and hope you have a wonderful stay with us. Our
+            team is dedicated to ensuring your comfort and satisfaction throughout your time here. Please feel free to contact us if
+            there's anything we can do to enhance your experience.
+        </p>
+        <p>
+            We wish you a relaxing and enjoyable stay with us.
+        </p>
+        <p class="text-white">Warm regards,</p>
+        <p class="fw-bold">The Hotel Paradise Team</p>
+    </div>
+    
+    <!-- Image Carousel -->
+    <div class="mb-5">
+        <div id="demo" class="carousel slide" data-bs-ride="carousel">
+            <!-- Indicators/dots -->
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+                <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+            </div>
+            
+            <!-- The slideshow/carousel -->
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="Screenshots/1.jpeg" alt="Hotel View" class="d-block w-100">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h3>Luxury Accommodations</h3>
+                        <p>Experience breathtaking views from our premium rooms</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="Screenshots/2.jpeg" alt="Hotel Kitchen" class="d-block w-100">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h3>Gourmet Dining</h3>
+                        <p>Our award-winning chefs create culinary masterpieces</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="Screenshots/3.jpeg" alt="Hotel Pool" class="d-block w-100">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h3>Infinity Pool</h3>
+                        <p>Relax in our stunning infinity pool with panoramic views</p>
+                    </div> 
+                </div>
+            </div>
+            
+            <!-- Left and right controls/icons -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+        </div>
+    </div>
+ </div>
+ 
+ <!-- Footer -->
+ <footer class="footer mt-5 bg-dark text-white py-4">
+    <div class="main-container">
+        <div class="row">
+            <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+                <h5 class="text-uppercase text-warning">Hotel Paradise Resort</h5>
+                <p>Where luxury meets comfort. Experience unparalleled hospitality in the heart of the city.</p>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+                <h5 class="text-uppercase text-warning">Quick Links</h5>
+                <ul class="list-unstyled">
+                    <li class="mb-2"><a href="home.html" class="text-white"><i class="fas fa-chevron-right me-2"></i>Home</a></li>
+                    <li class="mb-2"><a href="about.html" class="text-white"><i class="fas fa-chevron-right me-2"></i>About Us</a></li>
+                    <li class="mb-2"><a href="booking.html" class="text-white"><i class="fas fa-chevron-right me-2"></i>Booking</a></li>
+                    <li class="mb-2"><a href="rooms.html" class="text-white"><i class="fas fa-chevron-right me-2"></i>Rooms & Suites</a></li>
+                    <li class="mb-2"><a href="menu.html" class="text-white"><i class="fas fa-chevron-right me-2"></i>Menu</a></li>
+                    <li class="mb-2"><a href="contact.html" class="text-white"><i class="fas fa-chevron-right me-2"></i>Contact</a></li>
+                    <li class="mb-2"><a href="feedback.html" class="text-white"><i class="fas fa-chevron-right me-2"></i>Feedback</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+                <h5 class="text-uppercase text-warning">Contact Us</h5>
+                <p><i class="fas fa-envelope me-2"></i> info@hotelparadise.com</p>
+                <p><i class="fas fa-phone me-2"></i> +91 9876543210</p>
+
+                <div class="social-icons mt-3">
+                    <a href="https://www.facebook.com/" class="text-warning"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/" class="text-warning"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.twitter.com/" class="text-warning"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.linkedin.com/" class="text-warning"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="text-center py-3 bg-primary mt-3">
+        <small>&copy; 2025 Hotel Paradise. All rights reserved.</small>
+    </div>
+</footer>
+
+<!-- The Login Modal -->
+<div class="modal fade" id="myModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header bg-primary text-white">
+                <h4 class="modal-title">Member Login <i class="fa-solid fa-right-to-bracket"></i></h4>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+            </div>
+            <!-- Modal body -->
+            <div class="modal-body">
+                <form action="/action_page.php">
+                    <div class="mb-3 mt-3">
+                        <label for="email" class="form-label">Email:- </label>
+                        <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="pwd" class="form-label">Password:- </label>
+                        <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd" required>
+                    </div>
+                    <div class="form-check mb-3">
+                        <input class="form-check-input" type="checkbox" id="remember" name="remember">
+                        <label class="form-check-label" for="remember">Remember me</label>
+                    </div>
+                    <div class="d-grid gap-2">
+                        <button type="submit" class="btn btn-primary">Login</button>
+                    </div>
+                </form>
+            </div>
+           
+        </div>
+    </div>
+</div>
+</body>
+</html>

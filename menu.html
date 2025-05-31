@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Hotel Paradise - Menu</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .main-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        .navbar {
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .menu-header {
+            background: linear-gradient(135deg, #ff6b6b 0%, #fca35d 50%, #fdbf50 100%);
+            color: white;
+            padding: 30px 0;
+            margin-bottom: 30px;
+            text-align: center;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .menu-title {
+            font-size: 2.5rem;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            margin-bottom: 10px;
+        }
+        .menu-subtitle {
+            font-size: 1.2rem;
+            font-style: italic;
+        }
+        .food-category-title {
+            text-align: center;
+            color: #333;
+            margin-top: 30px;
+            margin-bottom: 20px;
+            font-size: 2rem;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        .food-category-title::before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background-color: #ffc107;
+        }
+        .food-item-card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            margin-left: -10px;
+            
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease-in-out;
+        }
+        .food-item-card:hover {
+            transform: scale(1.02);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .card-img-top {
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+            height: 200px;
+            object-fit: cover;
+        }
+        .card-body {
+            padding: 15px;
+        }
+        .card-title {
+            font-size: 1.5rem;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .card-text {
+            color: #666;
+            margin-bottom: 10px;
+        }
+        .rating-stars {
+            color: #ffc107;
+        }
+        .view-button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+        .view-button:hover {
+            background-color: #0056b3;
+        }
+        .footer {
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+            margin-top: 50px;
+            margin-right: 170px;
+            margin-left: 170px;
+        }
+        .social-icons a {
+            margin-right: 15px;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+        .social-icons a:hover {
+            transform: translateY(-3px);
+        }
+        .nav-link {
+            transition: all 0.2s ease;
+        }
+        .nav-link:hover {
+            transform: scale(1.05);
+        }
+        .list-unstyled a{
+        text-decoration: none;
+        
+    }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <div class="menu-header">
+            <h1 class="menu-title">Our Delicious Menu</h1>
+            <p class="menu-subtitle">A culinary journey awaits you.</p>
+        </div>
+
+        <nav class="navbar navbar-expand-sm navbar-dark bg-dark mb-4">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="home.html">Hotel Paradise</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="home.html"><i class="fa fa-home"></i> Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html"><i class="fa-solid fa-address-card"></i> About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="booking.html"><i class="fa-solid fa-book"></i> Booking</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="rooms.html"><i class="fa-solid fa-bed"></i> Rooms</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-warning" href="menu.html"><i class="fa-solid fa-utensils"></i> Menu</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html"><i class="fa-solid fa-envelope"></i> Contact</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="feedback.html"><i class="fa-solid fa-comment-dots"></i> Feedback</a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <button type="button" class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#myModal">
+                                Login <i class="fa-solid fa-right-to-bracket"></i>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <h2 class="food-category-title">Gujarati Delights</h2>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card food-item-card">
+                        <img class="card-img-top" src="Screenshots/6.jpeg" alt="Gujarati Thali">
+                        <div class="card-body">
+                            <h4 class="card-title">Gujarati Thali</h4>
+                            <p class="card-text">A flavorful assortment of traditional Gujarati dishes.</p>
+                            <p class="card-text">
+                                <b class="me-2">Rating :-</b>
+                                <i class="fa fa-star rating-stars"></i>
+                                <i class="fa fa-star rating-stars"></i>
+                                <i class="fa fa-star rating-stars"></i>
+                                <i class="fa fa-star rating-stars"></i>
+                                <i class="fa fa-star rating-stars"></i> (5)
+                            </p>
+                            <a href="https://en.wikipedia.org/wiki/Gujarati_Thali" class="btn btn-primary view-button" target="_blank">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card food-item-card">
+                        <img class="card-img-top" src="Screenshots/7.jpeg" alt="Dhokla">
+                        <div class="card-body">
+                            <h4 class="card-title">Dhokla</h4>
+                            <p class="card-text">Soft and spongy steamed cake, a popular Gujarati snack.</p>
+                            <p class="card-text">
+                                <b class="me-2">Rating :-</b>
+                                <i class="fa fa-star rating-stars"></i>
+                                <i class="fa fa-star rating-stars"></i>
+                                <i class="fa fa-star rating-stars"></i>
+                                <i class="fa fa-star rating-stars"></i>
+                                <i class="fa fa-star rating-stars"></i> (5)
+                            </p>
+                            <a href="https://en.wikipedia.org/wiki/Dhokla" class="btn btn-primary view-button" target="_blank">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card food-item-card">
+                        <img class="card-img-top" src="Screenshots/8.jpeg" alt="Undhiyu">
+                        <div class="card-body">
+                            <h4 class="card-title">Undhiyu</h4>
+                            <p class="card-text">A mixed vegetable casserole, a Gujarati winter specialty.</p>
+                            <p class="card-text">
+                                <b class="me-2">Rating :-</b>
+                                <i class="fa fa-star rating-stars"></i>
+                                <i class="fa fa-star rating-stars"></i>
+                                <i class="fa fa-star rating-stars"></i>
+                                <i class="fa fa-star rating-stars"></i>
+                                <i class="fa fa-star rating-stars"></i> (5)
+                            </p>
+                            <a href="https://en.wikipedia.org/wiki/Undhiyu" class="btn btn-primary view-button" target="_blank">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card food-item-card">
+                        <img class="card-img-top" src="Screenshots/9.jpeg" alt="Khandvi">
+                        <div class="card-body">
+                            <h4 class="card-title">Khandvi</h4>
+                            <p class="card-text">Rolled bite-sized savory snacks made from gram flour.</p>
+                            <p class="card-text">
+                                <b class="me-2">Rating :-</b>
+                                <i class="fa fa-star rating-stars"></i>
+                                <i class="fa fa-star rating-stars"></i>
+                                <i class="fa fa-star rating-stars"></i>
+                                <i class="fa fa-star rating-stars"></i>
+                                <i class="fa fa-star rating-stars"></i> (5)
+                            </p>
+                            <a href="https://en.wikipedia.org/wiki/Khandvi" class="btn btn-primary view-button" target="_blank">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="food-category-title">Punjabi Items</h2>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card food-item-card">
+                        <img class="card-img-top" src="Screenshots/10.jpeg" alt="Punjabi Thali">
+                        <div class="card-body">
+                            <h4 class="card-title">Punjabi Thali</h4>
+                            <p class="card-text">A rich and hearty combination of popular Punjabi dishes.</p>
+                            <p class="card-text">
+                                <b class="me-2">Rating :-</b>
+                                <i class="fa fa-star rating-stars"></i>
+                                <i class="fa fa-star rating-stars"></i>
+                                <i class="fa fa-star rating-stars"></i>
+                                <i class="fa fa-star rating-stars"></i>
+                                <i class="fa fa-star-half-o rating-stars"></i> (4.5)
+                            </p>
+                            <a href="https://cookwithrenu.com/vegetarian-punjabi-thali/" class="btn btn-primary view-button" target="_blank">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card food-item-card">
+                        <img class="card-img-top" src="Screenshots/11.jpeg" alt="Chole Bhature">
+                        <div class="card-body">
+                            <h4 class="card-title">Chole Bhature</h4>
+                            <p class="card-text">Spicy chickpeas served with fluffy deep-fried bread.</p>
+                            <p class="card-text">
+                                <b class="me-2">Rating :-</b>
+                                <i class="fa fa-star rating-stars"></i>
+                                <i class="fa fa-star rating-stars"></i>
+                                <i class="fa fa-star rating-stars"></i>
+                                <i class="fa fa-star rating-stars"></i>
+                                <i class="fa fa-star rating-stars"></i> (5)
+                            </p>
+                            <a href="https://en.wikipedia.org/wiki/Chole_bhature" class="btn btn-primary view-button" target="_blank">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card food-item-card">
+                        <img class="card-img-top" src="Screenshots/12.jpeg" alt="Paneer Tikka">
+                        <div class="card-body">
+                            <h4 class="card-title">Paneer Tikka</h4>
+                            <p class="card-text">Marinated and grilled cubes of fresh Indian cheese.</p>
+                            <p class="card-text">
+                                <b class="me-2">Rating :-</b>
+                                <i class="fa fa-star rating-stars"></i>
+                                <i class="fa fa-star rating-stars"></i>
+                                <i class="fa fa-star rating-stars"></i>
+                                <i class="fa fa-star rating-stars"></i>
+                                <i class="fa fa-star rating-stars"></i> (5)
+                            </p>
+                            <a href="https://en.wikipedia.org/wiki/Paneer_tikka" class="btn btn-primary view-button" target="_blank">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card food-item-card">
+                        <img class="card-img-top" src="Screenshots/13.jpeg" alt="Punjabi Kadhi">
+                        <div class="card-body">
+                            <h4 class="card-title">Punjabi Kadhi</h4>
+                            <p class="card-text">A tangy yogurt-based curry with vegetable fritters.</p>
+                            <p class="card-text">
+                                <b class="me-2">Rating :-</b>
+                                <i class="fa fa-star rating-stars"></i>
+                                <i class="fa fa-star rating-stars"></i>
+                                <i class="fa fa-star rating-stars"></i>
+                                <i class="fa fa-star rating-stars"></i>
+                                <i class="fa fa-star-half-o rating-stars"></i> (4.5)
+                            </p>
+                            <a href="https://www.indianhealthyrecipes.com/punjabi-kadhi-pakora-recipe/" class="btn btn-primary view-button" target="_blank">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer mt-5 bg-dark text-white py-4">
+        <div class="main-container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase text-warning">Hotel Paradise Resort</h5>
+                    <p>Savor the flavors of paradise. Explore our exquisite menu crafted with passion and the finest ingredients.</p>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase text-warning">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="home.html" class="text-white"><i class="fas fa-chevron-right me-2"></i>Home</a></li>
+                        <li class="mb-2"><a href="about.html" class="text-white"><i class="fas fa-chevron-right me-2"></i>About Us</a></li>
+                        <li class="mb-2"><a href="booking.html" class="text-white"><i class="fas fa-chevron-right me-2"></i>Booking</a></li>
+                        <li class="mb-2"><a href="rooms.html" class="text-white"><i class="fas fa-chevron-right me-2"></i>Rooms & Suites</a></li>
+                        <li class="mb-2"><a href="menu.html" class="text-white"><i class="fas fa-chevron-right me-2"></i>Menu</a></li>
+                        <li class="mb-2"><a href="contact.html" class="text-white"><i class="fas fa-chevron-right me-2"></i>Contact</a></li>
+                        <li class="mb-2"><a href="feedback.html" class="text-white"><i class="fas fa-chevron-right me-2"></i>Feedback</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase text-warning">Contact Us</h5>
+                    <p><i class="fas fa-envelope me-2"></i> info@hotelparadise.com</p>
+                    <p><i class="fas fa-phone me-2"></i> +91 9876543210</p>
+
+                    <div class="social-icons mt-3">
+                        <a href="https://www.facebook.com/" class="text-warning"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/" class="text-warning"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.twitter.com/" class="text-warning"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.linkedin.com/" class="text-warning"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center py-3 bg-primary mt-3">
+            <small>&copy; 2025 Hotel Paradise. All rights reserved.</small>
+        </div>
+    </footer>
+
+    <div class="modal fade" id="myModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-primary text-white">
+                    <h4 class="modal-title">Member Login <i class="fa-solid fa-right-to-bracket"></i></h4>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="/action_page.php">
+                        <div class="mb-3 mt-3">
+                            <label for="email" class="form-label">Email:- </label>
+                            <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="pwd" class="form-label">Password:- </label>
+                            <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd" required>
+                        </div>
+                        <div class="form-check mb-3">
+                            <input class="form-check-input" type="checkbox" id="remember" name="remember">
+                            <label class="form-check-label" for="remember">Remember me</label>
+                        </div>
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-primary">Login</button>
+                        </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
